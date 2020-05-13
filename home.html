@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c8be4a7df9.js" crossorigin="anonymous"></script>
+    <title>Floral Concept</title>
+    <style type="text/css">
+        /* CSS code */
+        /* CSS color variables: primary,secondary and overlay  */
+        :root{
+            --primary-color:#49616d;
+            --secondary-color:#444;
+            --overlay-color:rgba(0,0,0.7)
+        }
+        /* CSS core:  border-box to prevent padding adding width to elements */
+        *
+        {
+            box-sizing: border-box;
+            margin:0;
+            padding:0;
+        }
+        /* CSS body:  border-box to prevent padding adding width to elements */
+        body{
+            font-family: 'Catamaran',sans-serif;
+            line-height: 1.6;
+            color:#49616d;
+            font-size: 1.1rem;
+        }
+        h1,h2,h3,h4{
+            line-height: 1.3;
+        }
+        /* CSS Links: color secondary , text-decoration (not underlined) */
+
+        a{
+            color:var(--secondary-color);
+            text-decoration:none;
+        }
+        ul{
+            list-style:none;
+        }
+        /* CSS img:  width 100% so it takes 100% of its container */
+        img{
+            width: 100%;
+        }
+        /* CSS container:  max width 1100  , 
+                           margin to be middled from left and right,
+                           overflow so nothing goes out of its container
+                           padding 2 rem left and right ,*/
+        .container{
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding:0 2rem;
+        }
+        .navbar{
+            font-size: 1.2rem;
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+        }
+        @media only screen and (max-width: 1016px) {
+           .navbar{
+            display:none;
+           }
+        }
+        @media only screen and (max-width: 1016px) {
+           .burger-menu {
+             position:relative;
+             margin-bottom: 30px;
+             margin-left:10px;
+             top:10px;
+
+           }
+        }
+        @media only screen and (max-width: 1016px) {
+           .burger-menu div{
+            width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+           }
+        }
+        /* CSS navbar container: grid 2 columns for logo and navbar items */
+        .navbar .container{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+        .navbar .logo{
+            font-size: 2rem;
+        }
+        /* CSS navbar items: justify-self to make it to the right of the flex
+                             display flex to align the items beside each other, */
+        .navbar .nav{
+            justify-self: flex-end;
+            display: flex;
+            align-items: center;
+            justify-self: center;
+        }
+        /* CSS navbar links:  padding 0 1rem to leave spaces between the navbar links */
+        .navbar .nav a{
+          color:#49616d;
+            padding:0 1rem;
+        }
+        .navbar .nav a:hover{
+            color:crimson;
+        }
+        /* CSS  for the CAROUSEL section*/
+        .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+        }
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+  background-color: #130d0d;
+}
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+        /* CSS  for the sweepstake section*/      
+        #wrapper{
+            display:flex;
+            flex-direction: column;
+            max-width: 2060px;
+            max-height: fit-content;
+            margin:0 auto;
+        }
+        .register{
+          display:flex;
+        }
+        @media only screen and (max-width: 1016px) {
+           .pictures{
+            flex-direction:column;
+           }
+        }
+        @media only screen and (max-width: 1016px) {
+           .register{
+            flex-direction:column;
+            text-align: center;
+           }
+           .register input{
+             background-color:rgb(228, 225, 225);
+           }
+        }
+        .pictures{
+          display:flex 
+        }
+        #wrapper div{
+            padding:20px;
+        }
+        .registeration{
+            justify-items: end;
+        }
+        @media only screen and (max-width: 1016px) {
+          .vouchers{
+            height:430px !important;
+          }
+        }
+        @media only screen and (max-width: 1016px) {
+          .car{
+            height:430px !important;
+          }
+        }
+        .vouchers , .car {
+        /* Add shadows to create the "card" effect */
+        transition: 0.3s;
+        height: 500px;
+        }
+        #wrapper img{
+            height:300px;
+        }
+        input[type=text]{
+            font-size: medium;
+            width: 60%;
+            padding: 10px 10px;
+            margin: 8px 0;
+        }
+        input[type=text]:focus {
+        border: 3px solid crimson;
+        }
+        button {
+            background-color: #4d6d9a; 
+            border: none;
+            color:#f8edef;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor:pointer;
+            margin: 4px 2px;
+            border-radius: 8px;
+            } 
+                 /* CSS  for the products section*/
+        #products{
+            display:flex;
+            flex-direction: row;
+            max-width: 1060px;
+            text-align:center;
+            margin:0 auto;
+            justify-content: center;
+        }
+        @media only screen and (max-width: 1016px) {
+          #products{
+            flex-direction:column;
+          }
+        }
+        #products img{
+          max-width:180px;
+        }
+     
+                /* CSS  for the BRIEF section*/
+        #brief{
+            display:flex;
+            max-width: 1060px;
+            margin:0 auto;
+        }
+        @media only screen and (max-width: 1016px) {
+          #brief{
+            flex-direction:column;
+          }
+        }
+        @media only screen and (max-width: 1016px) {
+          .floral-brief{
+            font-size: 15px;;
+          }
+        }
+         @media only screen and (max-width: 1016px) {
+          .delivery-brief{
+            font-size: 15px;;
+          }
+        }
+          .floral-brief{
+            max-width: 100%;
+          }
+        #brief div{
+            padding:20px;
+            background-color:#faeee8;
+            border-radius: 8px;
+            margin: 4px 2px;
+        }
+    
+        .floral-brief{
+            grid-area: floral;
+            align-items: end;
+        }
+        .delivery-brief{
+            grid-area: delivery;
+        }
+             /* CSS  for the Footer section*/
+/* The footer is fixed to the bottom of the page */
+footer{
+	bottom: 0;
+}
+@media (max-height:800px){
+	footer { position: static; }
+	header { padding-top:40px; }
+}
+.footer-distributed{
+	background-color:#faeee8
+;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 50px 50px 60px 50px;
+	margin-top: 80px;
+}
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+/* Footer left */
+.footer-distributed .footer-left{
+	width: 30%;
+}
+.footer-distributed h3{
+	color: #49616d;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+/* The company logo */
+.footer-distributed .footer-left img{
+	width: 30%;
+}
+.footer-distributed h3 span{
+	color: crimson;
+}
+/* Footer links */
+.footer-distributed .footer-links{
+	color: #49616d;
+	margin: 20px 0 12px;
+}
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+.footer-distributed .footer-company-name{
+	color: #49616d;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+/* Footer Center */
+.footer-distributed .footer-center{
+	width: 35%;
+}
+.footer-distributed .footer-center i{
+	background-color:white;
+	color:crimson;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+ 
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #49616d;
+	vertical-align: middle;
+	margin:0;
+}
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+.footer-distributed .footer-center p a{
+	color: crimson;
+	text-decoration: none;;
+}
+/* Footer Right */ 
+.footer-distributed .footer-right{
+	width: 30%;
+}
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:#49616d;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+.footer-distributed .footer-company-about span{
+	display: block;
+	color: #49616d;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 75px;
+	cursor: pointer;
+	border-radius: 2px;
+	font-size: 20px;
+	color: #49616d;
+	text-align: center;
+	line-height: 35px;
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+/* Code for Responsive Footer */ 
+@media (max-width: 880px) {
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+}
+    </style>   
+    <script type="text/javascript">
+        /* Javascript  code*/ 
+        var slideIndex = 0;
+showSlides();
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none"; 
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1} 
+  slides[slideIndex-1].style.display = "block"; 
+  setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+     
+    </script>
+</head>
+<body id='home' onload=" showSlides(0)">
+    <!--NAVBAR Section -->
+    <div class='burger-menu'><div></div>
+    <div></div>
+    <div></div></div>
+    <nav class='navbar'>
+        <div class='container'>
+            <h1 class='logo'><img class='logo-img' src="./imgs/logo.png" style='max-width:120px'></img></h1>
+            <ul class='nav'>
+                <li><a href='#home'>HOME</a></li>
+                <li><a href='#order_online'>ORDER</a></li>
+                <li><a href='#about_us'>ABOUT</a></li>
+                <li><a href='#contact_us'>CONTACT</a></li>
+                <li><a href='#cart'> <i class="fas fa-cart-plus"> 0 $</i>
+
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+    <!--Carousel Section -->
+        <!-- Slideshow container -->
+<div class="slideshow-container">
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <img src="./imgs/carousel-1.jpg"style="width:100%">
+    </div>
+    <div class="mySlides fade">
+      <img src="./imgs//carousel-2.png" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+      <img src="./imgs/carousel-3.jpg" style="width:100%">
+    </div>
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" ></span> 
+    <span class="dot" ></span> 
+    <span class="dot" ></span> 
+  </div>
+  <br />
+  <br />
+    <!--Anniversary & Valantine'sweepstake -->
+    <div id="wrapper">
+      <div class='register'>
+        <div class="valantine-header">
+          <h3 style='color:crimson'>Valentine's Day Sweepstakes and Contests</h3>
+          <p>This year marks our 10th year anniversary, Celebrate with your sweetheart this Valentine's Day with dozens of prizes to be won. 
+          </p>
+      </div>
+      <div class='registeration'>
+        <p style='color:#49616d'>To participate please register by entering your number</p>
+        <label >+20</label>
+        <input type='text'></input>
+        <button  onClick="registered" id='register'>Register</button>
+    </div>
+      </div>
+          <div class='pictures'>
+            <div class='vouchers'>
+              <img src="./imgs/vouchers.png" alt="vouchers">
+              <div class="container">
+                <h4  style='text-align: center;'>Vouchers up to 1000 $</h4> 
+                <p style='text-align: center;'>You can win vouchers up to 1000 $ and many other prizes</p>
+              </div>
+       </div>
+      <div class='car'>   
+                  <img src="./imgs/renault.jpg" alt="car" >
+              <div class="container">
+                  <h4 style='text-align: center;'>A Superb  Renault Megan</h4> 
+                  <p style='text-align: center;'>A great chance to win a red Renault Megan 2020 !!</pstyle='text-align: center;'>
+                  </div>
+              </div>
+          </div>
+        </div>
+        </div>
+        <br />
+    <!--Products Section -->
+    <h3 style="text-align: center; font-weight: bold;">FEATURED PRODUCTS</h3>
+    <br />
+    <br />
+    <div id="products">
+        <div class='group-1'>
+            <div id="product1">
+                <img class='image' src="./imgs/product1.png" alt="vouchers">
+                <div class="container">
+                  <h5>VIOLET</h5> 
+                  <p>From: 500.00 EGP</p>
+                </div>
+              </div>
+                <div id="product2">
+                  <img src="./imgs/products2.png" alt="vouchers">
+                  <div class="container">
+                    <h5>ANTIQUE STYLE</h5> 
+                    <p>From: 550.00 EGP</p>
+                  </div>
+           </div>
+          </div>
+           <div class='group-2'>
+            <div id="product3">
+              <img src="./imgs/products3.png" alt="vouchers">
+              <div class="container">
+                <h5>PINKISH YELLOW</h5> 
+                <p>From: 600.00 EGP</p>
+              </div>
+            </div>
+              <div id="product4">
+                <img src="./imgs/products4.png" alt="vouchers">
+                <div class="container">
+                  <h5>SILVER WHITE</h5> 
+                  <p>From: 440.00 EGP</p>
+                </div>
+              </div>
+           </div>
+              <div class='group-3'>
+                <div id="product5">
+                  <img src="./imgs/products5.png" alt="vouchers">
+                  <div class="container">
+                    <h5>BLOOMS</h5> 
+                    <p>From: 360.00 EGP</p>
+                  </div>
+                </div>
+                <div id="product6">
+                  <img src="./imgs/products6.png" alt="vouchers">
+                  <div class="container">
+                    <h5>ROSE SPECIAL</h5> 
+                    <p>From: 650.00 EGP</p>
+                  </div>
+                </div>
+              </div>
+              <div class='group-4'>
+                <div id="product7">
+                  <img src="./imgs/products7.png" alt="vouchers">
+                  <div class="container">
+                    <h5>CLASSIC BLUE</h5> 
+                    <p>From: 400.00 EGP</p>
+                  </div>
+                </div>
+                <div id="product8">
+                  <img src="./imgs/products8.png" alt="vouchers">
+                  <div class="container">
+                    <h5>CLASSIC RED</h5> 
+                    <p>From: 850.00 EGP</p>
+                  </div>
+                </div>
+      </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+
+    </div>
+    <br />
+    
+    <button style=" display: table;
+    margin: 0 auto">VIEW FULL COLLECTION</button>
+    <br />
+    <br />
+    <!--Brief Section -->
+
+        <div id='brief'>
+            <div class='floral-brief'>
+
+                <h4>WORLD-CLASS FLORIST</h4>
+                <p>
+                    Flower shops have evolved from brick-and-mortar stores into an online flower shop. Online flower shops are a more convenient way of buying flowers. Here at FLORAL CONCEPT, we want to make our customers feel at ease while buying flowers online. It’s a few simple steps and you’ll just wait for the flowers to arrive. 
+                    Our wide range of flower arrangements is not only stunning but unique which makes us stand-out from other online flower shops. We want our customers to feel what flower arrangement they want to send or receive. 
+                </p>
+            </div>
+            <div class='delivery-brief'>
+                <h4>SAME DAY DELIVERY</h4>
+                <p>Have you thought of buying flowers today? FLORAL CONCEPT can provide you with same-day flower delivery service . Our flower delivery team will always assure the flowers are in perfect condition during transit. Not only do we deliver flowers but we deliver it with smiles. </p>
+
+            </div>
+        </div>
+
+        <br />
+        <br />
+
+
+    <!--Footer Section -->
+
+	<footer class="footer-distributed">
+
+        <div class="footer-left">
+      <img src="./imgs/logo.png">
+            <h3>About<span>FLORAL CONCEPT</span></h3>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="#">ORDER</a>
+                |
+                <a href="#">ABOUT US</a>
+                |
+    <a href="#">Contact</a>
+</p>
+
+<p class="footer-company-name">© FLORAL CONCEPT</p>
+</div>
+
+<div class="footer-center">
+<div>
+    <i class="fa fa-map-marker"></i>
+      <p><span>9 - ausn,
+         Bldg. No. C - 3, </span>
+        Cairo, Egypt</p>
+</div>
+
+<div>
+    <i class="fa fa-phone"></i>
+    <p>+201082198218</p>
+</div>
+<div>
+    <i class="fa fa-envelope"></i>
+    <p><a href="mailto:support@eduonix.com">support@floralconcept.com</a></p>
+</div>
+</div>
+<div class="footer-right">
+<p class="footer-company-about">
+    <span>About US</span>
+    We do free same-day flower delivery.</p>
+    <div class="footer-icons">
+    <a href="#"> <i class="fab fa-facebook-square"></i> </a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+</footer>
+</body>
+</html>
